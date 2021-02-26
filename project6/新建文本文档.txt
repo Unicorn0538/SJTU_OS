@@ -1,0 +1,18 @@
+一、设计思路
+main():在主函数中，读取传递的avaliable值，并且打开传递的文件名。将.txt文件中的数据读取写入到数组中，然后进行初始化。之后对输入的数据进行判断，调用响应的函数。
+is_safe():判断此时系统是否处于安全状态，算法如下图：
+ 
+request_resources():资源请求算法，判断是否安全允许请求的算法，若是，执行其请求。具体算法如下图：
+ 
+release_resources():资源释放请求算法，先使得allocation减去release，若allocation小于0则释放失败，恢复原来的状态。
+二、实验结果
+编译命令：
+$ gcc C.c
+ 
+ 
+三、讨论
+    本程序的难点在于安全性算法，对于安全的系统，满足条件 Finish[i] = false 和  Need[i,j] ≤ Work[j] 的，必定也会按照预期的将Finish[i]向量全部置为true。第一次编程的时候，只是将work遍历一遍，导致最后的结果，总是显示非安全状态。每次在改变finish的值的时候，就该重新开始遍历。
+参考：
+	OS教材第十版
+	计算机操作系统_银行家算法: 						https://blog.csdn.net/qq_36260974/article/details/84404369
+	银行家算法：					https://www.jianshu.com/p/5d01e5db5eaf?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation
