@@ -1,4 +1,6 @@
 #  SJTU OC设计课程作业
+## httpserver
+实现http服务器，通过socket连接，对http的请求进行处理。单线程任务处理。
 ## project2
 编写unix_shell，加载内核模块
 
