@@ -6,7 +6,7 @@
 头文件中主要是函数和信号量的定义。.c文件中是函数的实现
 pool_init和pool_submit主要是线程的创建和将任务提交到进程之中。
 equeue（）和dequeue（）是将任务插入和读出，模拟线程池的管理。在读取和插入的时候，要设置互斥锁，防止读取和插入发生冲突。
-worker（）和execute（）主要是任务的执行，在执行时，加等待信号量sem_wait(&semlock),保证每段时间只执行一个任务。
+worker（）和execute（）主要是任务的执行，在执行时，信号量sem_wait(&semlock)。
 
 2、实验效果
  
